@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eceff5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c111d" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hábito">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Hábito</title>
+</head>
+<body>
+<header class="topbar">
+  <button id="habitName" class="habit-name" aria-label="Cambiar nombre del hábito"></button>
+</header>
+
+<main id="views">
+  <section id="view-hoy" class="view active" aria-label="Hoy"></section>
+  <section id="view-semana" class="view" aria-label="Últimos 7 días"></section>
+  <section id="view-mes" class="view" aria-label="Mes actual"></section>
+  <section id="view-stats" class="view" aria-label="Estadísticas"></section>
+</main>
+
+<nav class="tabbar" aria-label="Secciones">
+  <button class="tab active" data-tab="hoy"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Hoy</span></button>
+  <button class="tab" data-tab="semana"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>Semana</span></button>
+  <button class="tab" data-tab="mes"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Mes</span></button>
+  <button class="tab" data-tab="stats"><svg viewBox="0 0 24 24"><path d="M5 20V12M12 20V5M19 20v-5"/></svg><span>Estadísticas</span></button>
+</nav>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <h2 id="sheetTitle"></h2>
+    <div class="sheet-actions">
+      <button data-set="1" class="opt opt-done">Cumplido</button>
+      <button data-set="0" class="opt opt-fail">No cumplido</button>
+      <button data-set="clear" class="opt opt-clear">Borrar selección</button>
+    </div>
+    <button class="sheet-cancel" data-close>Cancelar</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
